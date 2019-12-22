@@ -143,4 +143,7 @@
         });
     };
 
+    //add date to the year in footer.
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+
 })(jQuery);
