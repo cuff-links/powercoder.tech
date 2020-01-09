@@ -1,12 +1,12 @@
-(function($) {
+(function ($) {
     'use strict';
 
     // SCROLLSPY
     $('body').scrollspy({ target: '' });
 
     // SMOOTH SCROLLING
-    $(function() {
-        $("#main-menu li a, #slide-nav li a, .demo-action-btn a").bind('click', function(event) {
+    $(function () {
+        $("#main-menu li a, #slide-nav li a, .demo-action-btn a").bind('click', function (event) {
             var $anchor = $(this);
             $('html, body').stop().animate({
                 scrollTop: $($anchor.attr('href')).offset().top
@@ -22,10 +22,10 @@
     var CloseMu = $('.close-menu');
     var ExMu = $('.mainmenu-expand');
     var ExMuOp = $('.expand-menu-open');
-    CloseMu.on('click', function() {
+    CloseMu.on('click', function () {
         $(this).parent(ExMu).removeClass('slide_right');
     });
-    ExMuOp.on('click', function() {
+    ExMuOp.on('click', function () {
         CloseMu.parent(ExMu).addClass('slide_right');
     });
 
@@ -36,8 +36,8 @@
     // Portfolio Image Loded with Masonry
     var $PortfolioMasonry = $('.portfolio-masonry');
     if (typeof imagesLoaded === 'function') {
-        imagesLoaded($PortfolioMasonry, function() {
-            setTimeout(function() {
+        imagesLoaded($PortfolioMasonry, function () {
+            setTimeout(function () {
                 $PortfolioMasonry.isotope({
                     itemSelector: '.portfolio-item',
                     resizesContainer: false,
@@ -50,14 +50,14 @@
     };
 
     // Set Active Class for Portfolio filter
-    $('.portfolio-filter li').on('click', function(event) {
+    $('.portfolio-filter li').on('click', function (event) {
         $(this).siblings('.active').removeClass('active');
         $(this).addClass('active');
         event.preventDefault();
     });
 
     // Filter JS for Porrtfolio
-    $('.portfolio-filter').on('click', 'li', function() {
+    $('.portfolio-filter').on('click', 'li', function () {
         var filterValue = $(this).attr('data-filter');
         $PortfolioMasonry.isotope({ filter: filterValue });
     });
@@ -123,7 +123,7 @@
     $('body').append('<a id="back-top" href="#top"><i class="ti-angle-up"></i></a>');
     if ($('#back-top').length) {
         var scrollTrigger = 100, // px
-            backToTop = function() {
+            backToTop = function () {
                 var scrollTop = $(window).scrollTop();
                 if (scrollTop > scrollTrigger) {
                     $('#back-top').addClass('show-btn');
@@ -132,10 +132,10 @@
                 }
             };
         backToTop();
-        $(window).on('scroll', function() {
+        $(window).on('scroll', function () {
             backToTop();
         });
-        $('#back-top').on('click', function(e) {
+        $('#back-top').on('click', function (e) {
             e.preventDefault();
             $('html,body').animate({
                 scrollTop: 0
@@ -145,5 +145,5 @@
 
     //add date to the year in footer.
     document.getElementById("year").innerHTML = new Date().getFullYear();
-
+    document.getElementById("yearFooter").innerHTML = new Date().getFullYear();
 })(jQuery);
