@@ -1309,7 +1309,7 @@ a.button.large {
 *******************/
 
 .slider-area {
-    background: rgba(0, 0, 0, 0) url(img/bg/header-bg.jpg) no-repeat scroll center 100% / cover;
+    background: rgba(0, 0, 0, 0) url('https://via.placeholder.com/1920x950.png?text=The+Power+Coder') no-repeat scroll center 100% / cover;
     position: relative;
 }
 
